@@ -1,0 +1,111 @@
+html,body{width: 100%;}
+#vancl{height: 100%;width:100% ;}
+/* s-轮播图 */
+#box{
+    width: 1200px;height: 535px;
+    background: #cccccc;
+    overflow: hidden;
+    position: relative;
+}
+.imglist{
+    width: 1200px;height: 535px;
+    margin: 0 auto;
+}
+.imglist li{
+    position: absolute;left: 0;top: 0;
+}
+/* 焦点样式 */
+.light{
+    height: 20px;
+    background: rgb(255,255,255,.3);
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left: -40px;
+    text-align: center;
+    border-radius: 10px;
+}
+.light li{
+    display: inline-block;
+    width: 15px;height: 15px;
+    background:white;
+    border-radius: 50%;
+    margin: 3px;
+    cursor: pointer;
+}
+/* 焦点选中的背景色 */
+.light .active{
+    background:#B81B22;
+}
+/* 左右按钮样式 */
+.posibtn{
+    position: absolute;
+    top: 50%;left: 0;
+}
+.posibtn p{
+    width: 50px;
+    height: 50px;
+    color:#727171;
+    font-size:60px;
+    position: absolute;top: 0;
+}
+#box .posibtn:hover  p{
+    color:#B81B22;
+
+}
+.posibtn p:nth-child(1){
+    left:0px;
+}
+.posibtn p:nth-child(2){
+    right: -1200px;
+    text-align:end;
+}
+/* E-轮播图 */
+#main .qianggou{
+    margin: 40px 0 18px 0;
+}
+#main .miaosha{
+    position: relative;
+     height: 64px; width:  1200px;
+    background: url(../img/ms.jpg)no-repeat;
+
+}
+#main .miaosha h2{
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    right: 214px;top: 26px;
+}
+#main .daojishi{
+    font-size: 20px;
+    width: 168px;
+    height: 35px;
+    color: #AA0000;
+    position: absolute;
+    right: 13px;
+    top:21px;
+}
+#main .daojishi span{
+    width: 40px;
+    height: 30px;
+    margin-right: 9px;
+}
+#main .daojishi span:last-child{
+    margin-right: 0px;
+}
+#main .tejia ul{
+      display: flex;
+      justify-content: space-around;
+}
+#main .tejia h2{
+    margin-bottom: 22px;
+}
+#main .tejia h2,#main .tejia p{
+    font-size: 16px;
+}
+.chongzi,#main .tejia h2+p{
+    line-height: 22px;
+}
+#sx{
+    column-count: 4;
+}

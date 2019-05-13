@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/base.css">
+    <script src="lib/jquery-1.10.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div id="vancl">
+        <!-- 引入头部 -->
+        <div id="header"></div>
+        <div class="inner">
+        <main id="main">
+            <!-- 轮播图 -->
+            <div id="box">
+                <!-- 图片列表 -->
+                <div class="imglist">
+                    <ul>
+                        <li><img src="img/sx535.jpg" alt=""></li>
+                        <li><img src="img/535zj.jpg" alt=""></li>
+                        <li><img src="img/t535.jpg" alt=""></li>
+                        <li><img src="img/xn535g.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <!-- 焦点图 -->
+                <ul class="light">
+                    <!-- 根据图片的数量，动态生成 加类名用于添加焦点颜色 -->
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <!-- 上一张、下一张按钮 -->
+                <div class="posibtn">
+                    <p clsss="prev">&lt;</p>
+                    <p clsss="next">&gt;</p>
+                </div>
+                   <script>
+                    document.addEventListener('DOMContentLoaded',function(){
+                     imgscroll('box','active');
+                    })
+                 </script>
+            </div>
+          <div class="qianggou"><a href=""><img src="img/tlgjj.jpg" alt="抢购"></a> </div>
+          <div class="miaosha"><a href="#"></a> 
+                  <h2>距离秒杀还有</h2>
+                <div class="daojishi">
+                  <span style=" margin-left:10px" id="shi">00</span>
+                  <span id="feng">00</span>
+                  <span id="miao">00</span>
+                </div>
+        </div>
+        <div class="tejia ">
+            <ul class="tejialist">
+              <!-- <li><a href="#"><img src="img/y1.jpg" alt=""></a>
+                    <h2>T恤 偶发房 白色</h2>
+                    <p><del class="">98元</del></p>
+                    <div class="chongzi">
+                    <p class="fl" style="color: #B81B22;
+                    ">￥19元</p><p class="fr">充值后<span style="color:#B81B22;font-size: 24px;">19</span>元</p>
+                    </div> 
+              </li> -->
+            </ul>
+        </div>
+        </main>
+        <!-- T恤上新-->
+       <a href=""> <img src="img/T恤上新.jpg" alt=""></a>
+        <div id="sx">
+            <!-- <img src="" alt=""> -->
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+   $("#header").load("../html/header.html");
+</script>
+<script src="js/index.js"></script>
+</html>

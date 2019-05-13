@@ -1,0 +1,72 @@
+/* 清除默认，设置公共 */
+html {
+    color:#000;
+    background:#FFF;
+    font-family:"Microsoft YaHei";
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, th, td {
+    margin:0;
+    padding:0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size:100%;
+    font-weight:normal;
+    color:#333333;
+}
+fieldset, img, input {
+    border:0;
+}
+li {
+    list-style:none;
+}
+em, strong, th {
+    font-style:normal;
+    font-weight:normal;
+}
+input, textarea, select {
+    font-family:inherit;
+    font-size:inherit;
+    font-weight:inherit;
+}
+input, textarea, select {
+    *font-size:100%;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+body {
+    font-size:12px;
+    font-family:"宋体";
+    color:#333;
+}
+a:link, a:visited {
+    color:#333;
+    text-decoration:none;
+}
+a:hover {
+    color:#a10000;
+    text-decoration:none;
+}
+a, area {
+    blr:expression(this.onFocus=this.blur())
+}
+a:focus {
+    outline:none;
+}
+.inner{width: 1200px;
+      margin: 0 auto;
+}
+.fl{float: left;}
+.fr{float: right;}
+.clearfix:after{
+	content:"";
+	display:block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+	 *zoom:1;
+}
+*{box-sizing: border-box}
+span,img{display:inline-block}

@@ -1,0 +1,88 @@
+#header{height: 200px;}
+#header .dingbu{height: 30px;background:#F7F7F7;}
+.conten-dingbu{line-height: 30px}
+.gonggao{padding-left: 20px;background: url(../img/notice.png)no-repeat 1px -5px;margin-right: 5px }
+.meiti img{vertical-align:middle;padding-left: 2px}
+#header .search{width: 440px;
+}
+#header .search input:nth-child(1){
+    width: 220px;
+    height: 30px;
+    border: 1px solid #cccccc;
+    padding-left: 5px;
+}
+#header .search input:nth-child(2){
+    width: 48px;
+    height: 30px;
+    border: 1px solid #cccccc;
+    background: #B81B22;
+    color: white
+}
+.ggcar{
+    margin-top: 28px;
+    margin-left: 23px;
+    display:inline-block;
+    width: 107px;
+    height: 30px;
+    background: #B81B22;
+    color: white;
+    line-height: 30px;
+    padding-left: 15px;    
+}
+.ggcar i{
+    display:inline-block;
+    vertical-align:middle;
+    width: 21px;
+    height: 16px;
+    background: url(../img/iconcar.png)no-repeat scroll 0px 0px
+}
+.reishou{ 
+    line-height: 26px;
+    font-size: 12px;
+    color: #cccccc;
+}
+.nav{
+    display:flex;
+    z-index: 99;
+    position: relative;
+}
+.nav .ullsit{
+    display: flex;
+    margin-top: 26px;
+}
+.nav .ullsit li a{
+    display: inline-block;
+    width: 97px;
+    height: 18px;
+    color: #727171;
+    font-size: 16px;
+    text-align: center;
+}
+.nav span{
+    width: 200px;
+    height: 44px;
+    background: url(../img/logo18546.png)no-repeat 
+}
+.ullsit .subNav{
+    display: none;
+    line-height: 25px;
+    padding-top: 15px;
+    background: white;
+}
+.nav .ullsit li:hover .subNav{
+    display: block;
+    border-top:5px solid #B81B22;
+    margin-top: 5px;  
+    
+}
+.nav img:nth-child(1){
+    position: absolute;
+    left: 360px;
+    top: 14px;
+}
+.nav img:nth-child(2){
+    position: absolute;
+    left: 455px;
+    top: 14px;
+}
+/* E 头部 */

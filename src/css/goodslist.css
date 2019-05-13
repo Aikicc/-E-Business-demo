@@ -1,0 +1,143 @@
+#xnav .ullist{
+    display: flex;
+}
+#xnav2{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 15px 8px;
+}
+.xnav .shangpingming{
+    font-size: 20px;
+    color:#333333;
+    font-weight: bold;
+}
+#xqdata{
+    display: flex;
+}
+#xqdata .xiaotu{
+    width: 80px;height: 80px;
+    border: 2px solid red;
+    margin-right: 80px;
+}
+#xqdata .xiaotu img{
+    width: 100%;height: 100%;
+
+}
+#xqdata .fdjbox{
+    width: 300px;height: 300px;
+    border: 2px solid #cccccc;
+    position: relative;
+}
+#xqdata .zuochuang img{
+    width: 100%;height: 100%;
+}
+#xqdata .zuochuang{
+    position: relative;
+}
+#xqdata .zuochuang .mask{
+        width: 100px;
+        position: absolute;
+        height: 100px;
+        left: 0;
+        top: 0;
+        background: rgba(0,0,0,.3);
+        display: none;
+}
+#xqdata .youchuang{
+      width: 300px;height: 300px;
+      overflow: hidden;
+      position: absolute;
+      top:0px;
+      left: 300px;
+      display: none;
+      z-index: 99;
+}
+#xqdata .youchuang img{
+    width: 900px;height: 900px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#xqdata .xqinfo{
+     margin-left: 100px;
+}
+#xqdata .xqinfo p{
+    color: red;
+    font-size: 12px;
+    margin-bottom: 20px
+}
+#xqdata .yanse{
+    width: 100px;
+    height: 50px;
+    border: 1px solid #cccccc;
+    margin-bottom: 20px
+
+}
+#xqdata .yanse IMG{
+    width: 50PX;
+    height: 45PX;
+}
+#xqdata .chima{
+    margin-bottom: 20px
+
+}
+#xqdata .chima span{
+    width: 25px;height: 25px;
+    border: 1px solid #cccccc;
+    text-align: center;
+    line-height: 25px
+}
+#xqdata .chima .active,#xqdata .active{
+    border: 2px solid red;
+}
+#xqdata .ljgm{
+    display: flex;
+    margin-top:20px;
+}
+#xqdata .ljgm div:first-child{
+    width: 150px;height: 45px;
+    border: 1px solid red;
+    text-align: center;
+    line-height: 45px;
+    background: pink;
+    margin-right: 20px;
+}
+#xqdata .ljgm div:last-child{
+    width: 150px;height: 45px;
+    border: 1px solid red;
+    text-align: center;
+    line-height: 45px;
+    background: red;
+    color: white;
+}
+#xqdata .youhua{
+    margin-top: 20px;
+}
+#xqjsbufeng .xqjstu{
+         display: flex;
+         justify-content: center
+}
+#pinglun{
+    height: 500px;
+    background: goldenrod;
+}
+#ask{
+    height: 200px;background: palegreen
+}
+#xnav2 .car{
+    display: inline-block;
+    width: 150px;height: 45px;
+    border: 1px solid red;
+    text-align: center;
+    line-height: 45px;
+    background: red;
+    color: white;
+    display: none
+}
+ .fix{
+    position: fixed;
+    left: 0;top: 0;
+    z-index: 98;
+    background: white;
+    margin:0 20px;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/goodslist.css">
+    <script src="../js/common.js"></script>
+    <script src="../lib/jquery-1.10.1.min.js"></script>
+    <title>商品详情</title>
+</head>
+
+<body>
+    <!-- 引入详情页 -->
+    <div id="header"></div>
+    <!-- 详情页 -->
+    <div class="inner">
+        <div id="xnav">
+            <ul class="ullist">
+                <li><a href="">首页 </a>&gt;</li>
+                <li><a href="">男装 </a>&gt;</li>
+                <li><a href="">T恤 </a>&gt;</li>
+                <li class="spname"><a href=""></a> &gt;</li>
+            </ul>
+        </div>
+        <div id="xnav2">
+            <div class="spname" style="font-size:24px;"></div>
+            <div class="mpt" style="padding-right: 5px;
+            font-size: 14px;
+            cursor: pointer;">
+                <span> 产品描述</span>
+                <span>评论</span>
+                <span>提问</span> 
+                <a class="car">加入购物车</a>
+        </div>
+        </div>
+        <div id="xqdata">
+        </div>
+        <div id="xqjsbufeng">
+        <hr style="margin:50px 0;">
+        <div>
+            <p>详情图片：</p>
+            <p>商品以实物为准</p>
+        </div>
+        <div class="xqjs">
+            <img src="../img/图片展示.jpg" alt="">
+            <div class="xqjstu"> </div>
+            <img src="../img/尺码.jpg" alt="">
+        </div>
+     </div>
+    <div id="pinglun"></div>
+    <div id="ask"></div>
+    </div>
+</body>
+<script>
+    //接受url从列表页带来的参数
+    var data = decodeURI(location.search);
+    //截取需要的数据
+    var dataNo2 = data.slice(1);
+    //转json格式
+    var obj = strToObj(dataNo2);
+    console.log(obj)
+    var xqye = `<div class="xiaotu"><img src="${obj.img}" alt=""></div>
+            <div class="fdjbox">
+            <div class="zuochuang"><img src="${obj.img}" alt="">
+            <div class="mask"></div>
+            </div>
+            <div class="youchuang">
+                <img src="${obj.img}" alt="">
+            </div>
+            </div>
+            <div class="xqinfo" style="width:450px">
+            <p>特惠价 ￥<span style="font-size: 24px;">${obj.dazhe}</span>&nbsp;<a href="">充一百返一百，点击充值</a></p>
+            颜色：<div class="yanse"> <img src="${obj.img}" alt=""></div>
+            尺码:<div class="chima">
+                         <span>x</span>
+                         <span>l</span>
+                         <span>xl</span>
+                         <span>xl</span>
+                     </div>
+                     数量<select name="数量" id="" style="" >
+                         <option value="1">1</option>
+                          <option value="2">2</option>
+                     </select>
+                     <div class="ljgm">
+                         <div>立即购买</div>
+                         <div>加入购物车</div>
+                     </div>
+                     <div class="youhua ">
+                         <hr>
+                         <span  style="width:35px;height: 20px;background: red;text-align: center;line-height: 20px">免邮</span>
+                         全场购物满199包邮
+                         <hr>
+                     </div>
+            </div>`
+    var spname =`${obj.name}`;
+    var tu =`<img src="${obj.img}" alt="">`;
+    var xqdata = document.querySelector("#xqdata");
+    var xqnav =  document.querySelector('#xnav .spname a');
+    var xqnav1 =  document.querySelector('#xnav2 .spname');
+    var xqjstu = document.querySelector('#xqjsbufeng .xqjstu');
+    console.log(xqjstu)
+    xqjstu.innerHTML = tu;
+    xqnav1 .innerHTML = spname; 
+    xqdata .innerHTML = xqye;
+    xqnav .innerHTML = spname;
+    //引入header
+    $("#header").load("header.html");
+    $(function () {
+        //跳楼按钮
+        $("#xnav2 .mpt span").click(function () {
+            $(this).css('color', 'red').siblings().css('color', '#333333')
+        });
+        //放大镜
+        $("#xqdata .zuochuang").bind({
+            mouseenter: function () {
+                $("#xqdata .zuochuang .mask").css('display', 'block');
+                $("#xqdata .youchuang").css('display', 'block');
+            },
+            mouseleave: function () {
+                $("#xqdata .youchuang").css('display', 'none');
+                $("#xqdata .zuochuang .mask").css('display', 'none');
+            }
+        })
+    });
+    var zuochuang = document.querySelector('#xqdata .zuochuang');
+    var fdjbox = document.querySelector('#xqdata .fdjbox');
+    var mask = document.querySelector('#xqdata .mask');
+    var youchuang = document.querySelector('#xqdata .youchuang');
+    var youcimg = document.querySelector('#xqdata .youchuang img');
+    zuochuang.onmousemove = function (ev) {
+        //光标可移动的范围
+        var x = (ev.clientX - fdjbox.offsetLeft) - mask.offsetWidth / 2;
+        var y = (ev.clientY - fdjbox.offsetTop) - mask.offsetHeight / 2;
+        //放大镜移动范围
+        var fdjx = zuochuang.offsetWidth - mask.offsetWidth;
+
+        var fdjy = zuochuang.offsetHeight - mask.offsetHeight;
+        if (x > fdjx) {
+            x = fdjx;
+        };
+        if (y > fdjy) {
+            y = fdjy;
+        };
+        if (x <= 0) {
+            x = 0;
+        }
+        if (y <= 0) {
+            y = 0;
+        }
+        mask.style.left = x + 'px';
+        mask.style.top = y + 'px';
+        //放大比例 可视区域-右窗宽高/放大镜移动范围
+        var scaleX = (youcimg.offsetWidth - youchuang.offsetWidth) / fdjx;
+        var scaleY = (youcimg.offsetHeight - youchuang.offsetHeight) / fdjy;
+        youcimg.style.left = -x * scaleX + 'px';
+        youcimg.style.top = -y * scaleY + 'px';
+    }
+    //尺码边框切换
+    $('#xqdata .yanse').click(function () {
+        $(this).addClass('active')
+    })
+    $('#xqdata .yanse').click(function () {
+        $(this).addClass('active')
+    })
+    $('#xqdata .chima span').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+    })
+    //滚动到一定距离固定头部
+    var head = 677;//
+    var guding =document.querySelector('#xnav2 .mpt');
+    var car = document.querySelector('#xnav2 .car');
+    console.log(guding)
+    window.onscroll = function(){
+    var gundongjuli = window.scrollY;
+    if(gundongjuli>=head){
+    guding.className ='fix';
+    car.style.display= 'inline-block';
+    }else{
+        guding.className ='';
+        car.style.display= '';
+
+    }
+ }
+ //楼层跳跃评论 产品详情 提问
+ //找对应的节点
+ var cbxq =document.querySelectorAll("#xnav2 .mpt span")[0];
+ var pl =document.querySelectorAll("#xnav2 .mpt span")[1];
+ var cbxqF = document.querySelector('#xqjsbufeng');
+ var plF = document.querySelector('#pinglun');
+ cbxq.onclick = function(){
+      var cbxqTop = cbxqF.offsetTop;//产品详情距顶部的高度
+      window.scrollTo(0,cbxqTop);
+ }
+ pl.onclick = function(){
+      var plTop = plF.offsetTop;//产品详情距顶部的高度
+      window.scrollTo(0,plTop);
+ } 
+</script>
+<script src="../js/index.js"></script>
+
+</html>
