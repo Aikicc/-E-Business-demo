@@ -62,18 +62,18 @@
     //转json格式
     var obj = strToObj(dataNo2);
     console.log(obj)
-    var xqye = `<div class="xiaotu"><img src="${obj.img}" alt=""></div>
+    var xqye = `<div class="xiaotu"><img src="../${obj.img}" alt=""></div>
             <div class="fdjbox">
-            <div class="zuochuang"><img src="${obj.img}" alt="">
+            <div class="zuochuang"><img src="../${obj.img}" alt="">
             <div class="mask"></div>
             </div>
             <div class="youchuang">
-                <img src="${obj.img}" alt="">
+                <img src="../${obj.img}" alt="">
             </div>
             </div>
             <div class="xqinfo" style="width:450px">
             <p>特惠价 ￥<span style="font-size: 24px;">${obj.dazhe}</span>&nbsp;<a href="">充一百返一百，点击充值</a></p>
-            颜色：<div class="yanse"> <img src="${obj.img}" alt=""></div>
+            颜色：<div class="yanse"> <img src="../${obj.img}" alt=""></div>
             尺码:<div class="chima">
                          <span>x</span>
                          <span>l</span>
@@ -96,7 +96,7 @@
                      </div>
             </div>`
     var spname =`${obj.name}`;
-    var tu =`<img src="${obj.img}" alt="">`;
+    var tu =`<img src="../${obj.img}" alt="">`;
     var xqdata = document.querySelector("#xqdata");
     var xqnav =  document.querySelector('#xnav .spname a');
     var xqnav1 =  document.querySelector('#xnav2 .spname');
@@ -199,6 +199,4 @@
       window.scrollTo(0,plTop);
  } 
 </script>
-<script src="../js/index.js"></script>
-
 </html>

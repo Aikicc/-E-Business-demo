@@ -49,7 +49,7 @@ a:hover {
     text-decoration:none;
 }
 a, area {
-    blr:expression(this.onFocus=this.blur())
+    display: inline-block;
 }
 a:focus {
     outline:none;

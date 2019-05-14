@@ -109,3 +109,77 @@ html,body{width: 100%;}
 #sx{
     column-count: 4;
 }
+#tuijian h2{
+    text-align: center;
+    line-height: 50px;
+    margin: 30px 0px;
+    font-family: "Microsoft YaHei";
+    color: #9a9a9a;
+    font-size: 18px;
+}
+#tuijian ul li{
+    float: left;
+    margin-right: 17px;
+}
+#tuijian ul h3,#xiazhuang ul h3{
+    height: 28px;
+    padding: 20px 12px;
+    border: 1px solid #e8e7ec;
+    border-top: 0px;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+#xiazhuang h2,#jinping h2{
+    text-align: center;
+    line-height: 50px;
+    margin: 30px 0px;
+    font-family: "Microsoft YaHei";
+    color: #9a9a9a;
+    font-size: 18px;
+}
+#xiazhuang ul li{
+    width: 285px;
+    height: 508px;
+    float: left;
+    display: inline;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+#jinping ul li{
+    float: left;
+    width: 385px;
+    height: 275px;
+    display: inline;
+    margin: 0px 22px 28px 0px;
+}
+#nav{
+     position: fixed;
+     right: 20px;bottom:50px;
+     width: 73px;
+     height: 205px;
+     border: 1px solid #b81b22;
+     border-bottom: none;
+     margin-bottom: 30px;
+     display: none;
+ }
+ #nav ul li{
+    width: 71px;
+    border-bottom: 1px solid #b81b22;
+ }
+ #nav ul .appdown a{
+     width: 71px;
+     height: 76px;
+     background: url(../img/baywindow.png)no-repeat -1px 0px;
+ }
+ #nav ul .kefu a{
+    width: 71px;
+    height: 77px;
+    background: url(../img/baywindow.png)no-repeat -1px -78px;
+}
+#nav ul .top{
+
+    width: 71px;
+    height: 44px;
+    background: url(../img/baywindow.png)no-repeat -1px -160px;
+}

@@ -13,9 +13,8 @@ function imgscroll(id, active) {	//找元素
     //1.图片放在右侧，第一个图放在可视区
     for (var li of lis) {
         li.style.left = iw + 'px';
-    }
     lis[0].style.left = 0;
-
+    }
     //2.自动轮播
     var timer = null;
     timer = setInterval(next, 2000); //图片切换的间隔时间
@@ -166,7 +165,7 @@ window.onload = function () {
 
 // 特价列表数据请求
 var teijialist = document.querySelector(".tejialist");
-var url = '../api/tejia.php';
+var url = 'api/tejia.php';
 ajax('get', url, "", function (str) {
     var obj = JSON.parse(str);
     var teijia = obj.map(function (item) {
@@ -187,26 +186,33 @@ ajax('get', url, "", function (str) {
         imgList[i].onclick = function(){
             console.log(obj [this.index])//点击谁，就用那条数据
          var str = objToStr(obj [this.index]);
-         location.href ='../html/goodslist.html?' + str;
+         location.href ='html/goodslist.html?' + str;
         }
     }
 });
 // t恤上新数据请求
 var sxnode =document.querySelector('#sx');
-// var url2 ='../api/sx.php';
-// ajax('get',url2,"",function(str){
-//     //转json格式
-//     var obj = JSON.parse(str)
-//     var sx = obj.map(function(item){
-//         return `<img src="${item.img}" alt="">`
-//     }).join('');
 // jq AJAX写法
-  $.get('../api/sx.php',function(str){
+  $.get('api/sx.php',function(str){
       var obj = JSON.parse(str);
       var sx = obj.map(function(item){
            return `<img src="${item.img}" alt="">`
       }).join('');
       sxnode.innerHTML = sx;
   })
-   
-// });
+  //点击回到顶部
+var backtop = document.querySelector('#nav ul .top');
+var nav = document.querySelector("#nav");
+top.onclick = function(){
+    window.scrollTo(0,0)
+}
+window.onscroll = function(){
+    var num =600;
+    var gdjl =window.scrollY;
+    if(gdjl>=num){
+        nav.style.display = 'block';
+    }else{
+        nav.style.display = 'none';
+
+    }
+}

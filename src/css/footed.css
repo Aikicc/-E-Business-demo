@@ -1,0 +1,105 @@
+ .vanclCustomer {
+    margin: 33px 0px 23px;
+    overflow: hidden;
+}    
+ .vanclCustomer ul li {
+    width: 370px;
+    height: 138px;
+    border-right: 1px solid #e0e0e1;
+    margin-right: 0px;
+    text-align: center;
+}
+ .vanclFoot ul li {
+    float: left;
+}
+.vanclCustomer ul li p.onlineCustomer {
+    margin: 15px auto 30px;
+}
+.vanclCustomer ul li p {
+    text-align: center;
+    font-size: 14px;
+    color: #727171;
+    line-height: 26px;
+}
+.vanclCustomer ul li p.onlineTime {
+    margin: 0px auto;
+    width: 156px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+    background: #b81c22;
+    color: #ffffff;
+}
+.vanclCustomer ul li p.seven {
+    margin: 20px 0px;
+}
+.full .vanclCustomer ul li p {
+    text-align: center;
+    font-size: 14px;
+    color: #727171;
+    line-height: 26px;
+}
+.vanclOthers {
+    height: 56px;
+    padding: 17px 0px 14px;
+    background: #f8f8f8;
+    width: 100%;
+    margin: 0;
+}
+.vanclOthers ul li {
+    padding: 0px 65px;
+    line-height: 26px;
+    border-right: 1px solid #dadadb;
+    width: auto;
+    text-align: center;
+    margin-right: 0px;
+}
+.vanclOthers ul li.none {
+    border-right: none;
+}
+.vanclFoot{
+    border: 1px solid #ccc;
+    padding: 20px 25px 20px 25px;
+}
+.footBottom {
+    width: 100%;
+    height: auto;
+    margin: 50px auto;
+    border-top: 1px solid #3e3a39;
+}
+.footBottomTab {
+    width: 1200px;
+    height: auto;
+    margin: 10px auto;
+}
+.footBottomTab {
+    height: auto;
+    margin: 10px auto;
+}
+.footBottomTab p {
+    text-align: center;
+    line-height: 25px;
+    color: #3e3a39;
+}
+.blank20 {
+    display: block;
+    width: 100%;
+    height: 20px;
+    line-height: 0px;
+    font-size: 0px;
+    clear: both;
+    overflow: hidden;
+}
+.subFooter {
+    width: 980px;
+    margin: 0px auto 25px;
+    text-align: center;
+}
+.subFooter .redLogo:link{
+    background: url(http://i.vanclimg.com/cms/20140116/spritesbgtop.png) no-repeat scroll 0 -581px transparent;
+    display: inline-block;
+    height: 42px;
+    width: 113px;
+    margin-right: 10px
+}
