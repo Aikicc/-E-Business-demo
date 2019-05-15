@@ -1,1 +1,54 @@
-登录
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <script src="../lib/jquery-1.10.1.min.js"></script>
+    <script src="../lib/captcha.js"></script>
+    <title>注册页</title>
+</head>
+
+<body id="body" class="inner" style="font: 100 12px;;">
+    <div id="top" style="margin:10px 0 0 0;padding:0 0 10px 0; border-bottom:solid 1px #919191;">
+        <img src="http://i1.vanclimg.com/cms/20160119/logo_new.jpg" alt="凡客诚品" title="凡客诚品" style="cursor:pointer">
+    </div>
+    <div class="regist clearfix" style="margin: 30px 0 0 0;">
+        <h1>
+            注册新用户 <span>我已经注册，现在就
+                <a href="../html/signin.html">登录</a></span>
+        </h1>
+    </div>
+    <div class="fl" style="margin-left:20px;"><img src="../img/login120412_newlogo.jpg" alt=""></div>
+    <!--注册表单部分 -->
+    <div class="signup">
+        <ul>
+            <li>
+                <div class="dongtaiyzm">
+                    <input type="text" id="yzm" style="width: 260px;
+                        border: solid 1px #cbcbcb; height: 43px; line-height: 43px;font-size: 20px;">
+                     <div class="sjyzm fr"><canvas width="140" height="45" id="captcha1" style="line-height: 50px;"></canvas></div>
+                     <span style="color:red;"></span>  
+                </div>
+            </li>
+            <li>
+                <div class="sjh">
+                    <input type="text" id="" placeholder="请输入手机号" style="width: 260px;
+                    border: solid 1px #cbcbcb; height: 43px; line-height: 43px;font-size: 20px;">
+                    <input type="button" value="免费获取短信验证码" class="dxyam fr" style="width:140px; height: 45px;color: red;line-height: 45px;background: #cccccc;text-align: center;cursor: pointer;">
+                    <span></span>
+                </div>
+            </li>
+            <li>
+               <input type="text" class="dx" placeholder="填写手机验证码(短信验证码默认1111)">
+               <span></span>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="../js/signup.js"></script>
+</script>
+</html>

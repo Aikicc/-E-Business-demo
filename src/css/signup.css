@@ -1,0 +1,44 @@
+.regist h1{
+    height: 35px;
+    width: 415px;
+    float: right;
+    line-height: 35px;
+    margin: 0 100px 0 0;
+    border-bottom: 2px solid #b81e20;
+    font-size: 20px;
+    color: #a2a2a2;
+    font-weight: bolder;
+}
+.regist h1 span {
+    font-size: 14px;
+    float: right;
+}
+.content_left {
+    width: 415px;
+    float: right;
+    margin: 10px 95px 0 0;
+    position: relative
+}
+.infor {
+    width: 415px;
+    zoom: 1;
+}
+.signup {
+    width: 415px;
+    height: 200px;
+    float: right;
+    margin: 10px 95px 0 0;
+}
+.signup ul li{
+    margin-top: 20px;
+}
+.dx {
+    height: 45px;
+    line-height: 45px;
+    color: #656565;
+    width: 415px;
+    display: block;
+    text-align: left;
+    font-size: 20px;
+    border: solid 1px #cbcbcb;
+}
