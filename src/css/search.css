@@ -1,0 +1,35 @@
+.nav2{
+    border-top: 2px solid red;
+    margin: 20px 0;
+}
+.nav2 ul{
+    margin-top: 20px;
+}
+.nav2 ul li{
+    float: left;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.up,.down,.fangwei input{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #cccccc;
+    text-align: center;
+    line-height: 30px;
+}
+.shangping p{
+    font-size: 20px;
+    margin:10px 0;
+}
+.shangping span{
+   color: red;
+}
+
+.shangping{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around
+}
+.shangping li{
+    margin-right: 5px
+}

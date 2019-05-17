@@ -32,7 +32,7 @@
 .signup ul li{
     margin-top: 20px;
 }
-.dx {
+.dx,.pw,.pwr ,.ljzc{
     height: 45px;
     line-height: 45px;
     color: #656565;
@@ -41,4 +41,10 @@
     text-align: left;
     font-size: 20px;
     border: solid 1px #cbcbcb;
+}
+.ljzc{
+    background:firebrick;
+    text-align: center;
+    color:white;
+    cursor: pointer;
 }

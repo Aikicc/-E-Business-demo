@@ -141,11 +141,18 @@
         img[i].src = $(img[i]).attr('src').slice(1);
          }
         var aTag = $('#header .conten-dingbu a');
-        console.log(aTag)        
         for(let i= 0;i<aTag.length;i++){
           console.log()
           aTag[i].href = $(aTag[i]).attr('href').slice(1);
         }
+        var user = getCookie('user')+"欢迎您";
+           var html = `user`;
+             $('#username').html(user)
+             $('#tuichu').click(function(){
+                 removeCookie('user');
+                 location.href='signin.html';
+                })
+
    });
 </script>
 <script src="js/index.js"></script>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/signup.css">
     <script src="../lib/jquery-1.10.1.min.js"></script>
     <script src="../lib/captcha.js"></script>
+    <script src="../js/common.js"></script>
     <title>注册页</title>
 </head>
 
@@ -36,7 +37,7 @@
             </li>
             <li>
                 <div class="sjh">
-                    <input type="text" id="" placeholder="请输入手机号" style="width: 260px;
+                    <input type="text" id="" placeholder="手机号(已存在13398765432）" style="width: 260px;
                     border: solid 1px #cbcbcb; height: 43px; line-height: 43px;font-size: 20px;">
                     <input type="button" value="免费获取短信验证码" class="dxyam fr" style="width:140px; height: 45px;color: red;line-height: 45px;background: #cccccc;text-align: center;cursor: pointer;">
                     <span></span>
@@ -45,6 +46,16 @@
             <li>
                <input type="text" class="dx" placeholder="填写手机验证码(短信验证码默认1111)">
                <span></span>
+            </li>
+            <li>
+                <input type="password" class="pw" placeholder="设置登录密码">
+            </li>
+            <li>
+                <input type="password" class="pwr" placeholder="确认登录密码">
+                <span class="mm"></span>
+            </li>
+            <li>
+                <input type="button" value="立即注册" class="ljzc">
             </li>
         </ul>
     </div>

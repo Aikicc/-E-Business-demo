@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/search.css">    
+    <script src="../js/common.js"></script>
+    <script src="../lib/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 引入头部 -->
+    <div id="header"></div>
+    <div class="inner">
+        <nav class="nav2 clearfix">
+            <ul>
+                <li class="up">价格从低到高</li>
+                <li class="down">价格从高到低</li>
+                <li class="fangwei">
+                    <input type="text" class="min">---<input type="text" class="max">
+                    <input type="button" value="确认" class="fw">
+                </li>
+            </ul>
+        </nav>
+        <ul class="shangping">
+            <!-- <li><img src="../img/sx1.jpg" alt="">
+       <p>凡客男士工装袋沙滩裤 牛仔蓝 </p>
+       <span>售价￥99</span> -->
+            </li>
+        </ul>
+    </div>
+    <div id="footed"></div>
+</body>
+<script>
+    $('#header').load('header.html')
+    $('#footed').load('footed.html');
+    //数据请求
+    var shangping = document.querySelector('.shangping');
+    $.get('../api/search.php', function (str) {
+        var obj = JSON.parse(str);
+        var redom = obj.map(function (item) {
+            return `<li data-id= ${item.id}><img class='lozad' data-src="../img/${item.img}" alt="">
+                    <p>${item.name}</p>
+                    <span>售价￥${item.dazhe}</span>
+                    </li>`
+        }).join('');
+        shangping.innerHTML = redom;
+        const observer = lozad();
+        observer.observe();
+        //点击跳转详情页
+        var imglist = document.querySelectorAll('.shangping img')
+        for(var i=0;i<imglist.length;i++){
+            imglist[i].index = i;
+            imglist[i].onclick=function(){
+                var str = objToStr(obj[this.index]);
+                location.href = 'goodslist.html?'+str;
+            }
+        }
+    })
+    //价格升序
+    $(".up").click(function () {
+        $.get('../api/order.php', function (str) {
+            console.log(str)
+            var obj = JSON.parse(str);
+        var redom = obj.map(function (item) {
+            return `<li data-id= ${item.id}><img class='lozad' data-src="../img/${item.img}" alt="">
+                    <p>${item.name}</p>
+                    <span>售价￥${item.dazhe}</span>
+                    </li>`
+        }).join('');
+        shangping.innerHTML = redom;
+        const observer = lozad();
+        observer.observe();
+        })
+    })
+    //价格降序
+    $(".down").click(function () {
+        $.get('../api/orderdown.php', function (str) {
+            var obj = JSON.parse(str);
+        var redom = obj.map(function (item) {
+            return `<li data-id= ${item.id}><img class='lozad' data-src="../img/${item.img}" alt="">
+                    <p>${item.name}</p>
+                    <span>售价￥${item.dazhe}</span>
+                    </li>`
+        }).join('');
+        shangping.innerHTML = redom;
+        const observer = lozad();
+        observer.observe();
+
+        })
+    })
+    //价格区间
+    $('.fw').click(function () {
+        var min = $('.min').val();
+        var max = $('.max').val();
+        ajax2({
+            type: 'get',
+            url: '../api/fw.php',
+            data: 'min=' + min + '&max=' + max,
+            success: function (str) {
+                var obj = JSON.parse(str);
+                var redom = obj.map(function (item) {
+                    return `<li data-id= ${item.id}><img src="../img/${item.img}" alt="">
+                    <p>${item.name}</p>
+                    <span>售价￥${item.dazhe}</span>
+                    </li>`
+                }).join('');
+                shangping.innerHTML = redom;
+            }
+        })
+    })
+    //懒加载
+</script>
+</html>

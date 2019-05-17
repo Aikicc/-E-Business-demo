@@ -134,7 +134,7 @@ function imgscroll(id, active) {	//找元素
 //1.设置终点时间
 window.onload = function () {
     //1.设置终点时间
-    var endtime = '2019-5-14 21:47:00';
+    var endtime = '2019-5-30 21:47:00';
     var end = Date.parse(endtime);
 
     var msinfo = document.querySelector('#main .miaosha h2');
@@ -169,7 +169,7 @@ var url = 'api/tejia.php';
 ajax('get', url, "", function (str) {
     var obj = JSON.parse(str);
     var teijia = obj.map(function (item) {
-        return `<li data-id ="${item.id}"><a href="#"><img src="${item.img}" alt="" ></a>
+        return `<li data-id ="${item.id}"><a href="#"><img src="img/${item.img}" alt="" ></a>
                 <h2>${item.name}</h2>
                 <p><del class="">${item.yuajia}元</del></p>
                 <div class="chongzi">
