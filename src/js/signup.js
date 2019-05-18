@@ -27,7 +27,7 @@ captcha1.draw(document.querySelector('#captcha1'), r => {
 });
 //手机号，请求短信验证
 //验证码倒计时
-var wait = 4;
+var wait = 60;
 function time(o) {
     if (wait == 0) {
         o.removeAttribute("disabled");

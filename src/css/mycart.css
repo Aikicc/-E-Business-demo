@@ -1,0 +1,123 @@
+.innercart{
+    width: 1000px;
+    margin:0 auto;
+
+}
+.header{
+    margin: 20px 0;
+}
+ .header .nav{
+    float: right;
+    border-bottom: 1px solid #cccccc;
+    width: 689px;
+    height: 30px;
+}
+.header .nav p{
+    text-align: right;
+    line-height:25px;
+}
+.header .nav p>a{
+    color:#B81C22;
+}
+.header .nav span:last-child{
+    margin-left: 30px;
+}
+.cartlogo{
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.notice{
+    line-height: 50px;
+}
+.thead{
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    background: #cccccc;  
+     height: 50px;
+     line-height: 50px
+}
+.tbody{
+    display: flex;
+    justify-content:space-around;
+    font-size: 20px;
+    margin:20px 0;
+}
+.tbody img{
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    text-align: right
+}
+.shuliang span{
+     width: 20px;height: 20px;background: #cccccc;
+     text-align: center;font-weight: bold;line-height: 20px;
+}
+.shuliang span:hover{
+    background: #B81C22;
+    color: white;
+    cursor: pointer;
+}   
+.slvalue{
+    width: 40px;
+    height: 20px;
+    border: 1px solid #cccccc;
+}
+.xuanzhe{
+    margin-left: 60px;
+    vertical-align: middle
+}
+.size{
+    margin-left: 20px
+
+}
+.minctotal{
+    width: 100px;
+}
+.doing{
+    cursor: pointer;
+}
+.contentcart{
+    border: 1px solid #ccc;
+}
+.jiesuancont{
+    background: #FFFEF5;
+    border: 1px solid #FFFEF5;
+    height: 100px
+}
+.gongneng{
+    margin: 20px 10px;
+}
+.jiesuan{
+    margin:40px 10px 10px 10px;
+}
+.jiesuan span:first-child{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background: #ccc;
+    font-size: 16px;
+    text-align: center
+}
+.jiesuan span:last-child{
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    background:red;
+    font-size: 20px;
+    text-align: center;
+   color: white;
+
+}
+.noen{
+    z-index:99;
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    background: #B81C22;
+    cursor: pointer;
+    font-size: 16px;
+    display: none;
+    
+}
