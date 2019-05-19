@@ -32,40 +32,52 @@
             cursor: pointer;">
                 <span> 产品描述</span>
                 <span>评论</span>
-                <span>提问</span> 
+                <span>提问</span>
                 <a class="car">加入购物车</a>
-        </div>
+            </div>
         </div>
         <div id="xqdata">
         </div>
         <div id="xqjsbufeng">
-        <hr style="margin:50px 0;">
-        <div>
-            <p>详情图片：</p>
-            <p>商品以实物为准</p>
+            <hr style="margin:50px 0;">
+            <div>
+                <p>详情图片：</p>
+                <p>商品以实物为准</p>
+            </div>
+            <div class="pop">
+                <div class="guanbi">
+                    <span style="margin-left:10px">商品成功加入购物车</span><span class="cha fr"
+                        style="font-size:30px;margin-right: 10PX;cursor: pointer;">X</span>
+                </div>
+                <div class="xq">
+                    <p>共有 <span style="color:red;">0</span> 件商品</p>
+                    <p>总计 <span style="color:red;">0</span> </p>
+                    <a href="goodslist.html" style="background: #cccccc;
+               ">《《继续购物</a>
+                    <a href="mycart.html" style="background: #B81B22;">去购物车》》</a>
+                </div>
+            </div>
+
+            <div class="xqjs">
+                <img src="../img/图片展示.jpg" alt="">
+                <div class="xqjstu"> </div>
+                <img src="../img/尺码.jpg" alt="">
+            </div>
         </div>
-        <div class="xqjs">
-            <img src="../img/图片展示.jpg" alt="">
-            <div class="xqjstu"> </div>
-            <img src="../img/尺码.jpg" alt="">
-        </div>
-     </div>
-    <div id="pinglun"></div>
-    <div id="ask"></div>
+        <div id="pinglun"></div>
+        <div id="ask"></div>
     </div>
 </body>
 <script>
     //接受url从列表页带来的参数
     var data = decodeURI(location.search);
-    console.log(data)
     //截取需要的数据
     var dataNo2 = data.slice(1);
     //转json格式
     var obj = strToObj(dataNo2);
-    console.log(obj)
     var xqye = `<div class="xiaotu"><img src="../img/${obj.img}" alt=""></div>
             <div class="fdjbox">
-            <div class="zuochuang"><img src="../img/${obj.img}" alt="">
+            <div class="zuochuang" data-id='${obj.id}'><img src="../img/${obj.img}" alt="">
             <div class="mask"></div>
             </div>
             <div class="youchuang">
@@ -79,15 +91,15 @@
                          <span>x</span>
                          <span>l</span>
                          <span>xl</span>
-                         <span>xl</span>
+                         <span>xxl</span>
                      </div>
                      数量<select name="数量" id="" style="" >
                          <option value="1">1</option>
                           <option value="2">2</option>
                      </select>
                      <div class="ljgm">
-                         <div>立即购买</div>
-                         <div>加入购物车</div>
+                        <div class='quickbuy'>立即购买</div>
+                         <div class='addcart'>加入购物车</div>
                      </div>
                      <div class="youhua ">
                          <hr>
@@ -96,17 +108,17 @@
                          <hr>
                      </div>
             </div>`
-    var spname =`${obj.name}`;
-    var tu =`<img src="../img/${obj.img}" alt="">`;
+    var spname = `${obj.name}`;
+    var tu = `<img src="../img/${obj.img}" alt="">`;
     var xqdata = document.querySelector("#xqdata");
-    var xqnav =  document.querySelector('#xnav .spname a');
-    var xqnav1 =  document.querySelector('#xnav2 .spname');
+    var xqnav = document.querySelector('#xnav .spname a');
+    var xqnav1 = document.querySelector('#xnav2 .spname');
     var xqjstu = document.querySelector('#xqjsbufeng .xqjstu');
     console.log(xqjstu)
     xqjstu.innerHTML = tu;
-    xqnav1 .innerHTML = spname; 
-    xqdata .innerHTML = xqye;
-    xqnav .innerHTML = spname;
+    xqnav1.innerHTML = spname;
+    xqdata.innerHTML = xqye;
+    xqnav.innerHTML = spname;
     //引入header
     $("#header").load("header.html");
     $(function () {
@@ -171,33 +183,92 @@
     })
     //滚动到一定距离固定头部
     var head = 677;//
-    var guding =document.querySelector('#xnav2 .mpt');
+    var guding = document.querySelector('#xnav2 .mpt');
     var car = document.querySelector('#xnav2 .car');
     console.log(guding)
-    window.onscroll = function(){
-    var gundongjuli = window.scrollY;
-    if(gundongjuli>=head){
-    guding.className ='fix';
-    car.style.display= 'inline-block';
-    }else{
-        guding.className ='';
-        car.style.display= '';
+    window.onscroll = function () {
+        var gundongjuli = window.scrollY;
+        if (gundongjuli >= head) {
+            guding.className = 'fix';
+            car.style.display = 'inline-block';
+        } else {
+            guding.className = '';
+            car.style.display = '';
 
+        }
     }
- }
- //楼层跳跃评论 产品详情 提问
- //找对应的节点
- var cbxq =document.querySelectorAll("#xnav2 .mpt span")[0];
- var pl =document.querySelectorAll("#xnav2 .mpt span")[1];
- var cbxqF = document.querySelector('#xqjsbufeng');
- var plF = document.querySelector('#pinglun');
- cbxq.onclick = function(){
-      var cbxqTop = cbxqF.offsetTop;//产品详情距顶部的高度
-      window.scrollTo(0,cbxqTop);
- }
- pl.onclick = function(){
-      var plTop = plF.offsetTop;//产品详情距顶部的高度
-      window.scrollTo(0,plTop);
- } 
+    //楼层跳跃评论 产品详情 提问
+    //找对应的节点
+    var cbxq = document.querySelectorAll("#xnav2 .mpt span")[0];
+    var pl = document.querySelectorAll("#xnav2 .mpt span")[1];
+    var cbxqF = document.querySelector('#xqjsbufeng');
+    var plF = document.querySelector('#pinglun');
+    cbxq.onclick = function () {
+        var cbxqTop = cbxqF.offsetTop;//产品详情距顶部的高度
+        window.scrollTo(0, cbxqTop);
+    }
+    pl.onclick = function () {
+        var plTop = plF.offsetTop;//产品详情距顶部的高度
+        window.scrollTo(0, plTop);
+    }
+    //立即购买
+    $('.quickbuy').click(function () {
+        location.href = 'mycart.html?' + obj.id
+    })
+    //点击显示弹窗
+    $('.addcart').click(function () {
+        $('.pop').css('display', 'block')
+    })
+    $('.cha').click(function () {
+        $('.pop').css('display', 'none')
+    })
+    //加入购物车
+    var id = obj.id;
+    var img = obj.img;
+    var dazhe = obj.dazhe;
+    var mingcheng = obj.name;
+    console.log(mingcheng)
+    $('.addcart').click(function () {
+        console.log(111);
+        $.ajax({
+            type: 'get',
+            url: '../api/addorjiajia.php',
+            data: 'id=' + id,
+            success: function (str) {
+                console.log(str);
+                if (str == "yes") {
+                    // 有就数量加1，数量加一之前查询目总数
+                    $.ajax({
+                        type: 'get',
+                        url: '../api/carttota.php',
+                        data: 'id=' + id,
+                        success: function (str) {
+                            var obj = JSON.parse(str);
+                            var num = obj.map(function (item) {
+                                return item.total
+                            }).join('');
+                            num++;
+                            $.ajax({
+                                type: 'get',
+                                url: '../api/addnum.php',
+                                data: 'id=' + id + '&num=' + num,
+                                success: function (str) {
+                                }
+                            })
+
+                        }
+                    })
+                }else{
+                    $.ajax({
+                            type:'get',
+                            url:'../api/addcart.php',
+                            data:"id="+id+"&img="+img+"&dazhe="+dazhe+"&mingcheng="+mingcheng,
+                        })    
+                }
+            }
+
+        })
+    })
 </script>
+
 </html>

@@ -104,10 +104,10 @@
 }
 #xqdata .ljgm div:last-child{
     width: 150px;height: 45px;
-    border: 1px solid red;
+    border: 1px solid#B81B22;
     text-align: center;
     line-height: 45px;
-    background: red;
+    background:#B81B22;
     color: white;
 }
 #xqdata .youhua{
@@ -127,10 +127,10 @@
 #xnav2 .car{
     display: inline-block;
     width: 150px;height: 45px;
-    border: 1px solid red;
+    border: 1px solid #B81B22;
     text-align: center;
     line-height: 45px;
-    background: red;
+    background: #B81B22;
     color: white;
     display: none
 }
@@ -140,4 +140,35 @@
     z-index: 98;
     background: white;
     margin:0 20px;
+}
+.pop .guanbi{
+    width: 400px;
+    height: 50px;
+    background: #B81B22;
+    line-height: 50px;
+    color:white;
+}
+#xqjsbufeng{
+    position: relative;
+}
+.pop{
+    position: absolute;
+    left:550px;
+    top: -163px;
+    z-index: 99;
+    display: none;
+}
+.xq{
+    width: 400px;
+    height: 200px;
+    border: 1px solid #cccccc;
+    background: white;
+    padding: 20px 10px;
+}
+.xq a{
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 20px
+
 }
